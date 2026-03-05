@@ -1,13 +1,31 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+public class Main {
+    public static void main(String[] args) {
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+        CentroFP uax = new CentroFP(10);
+
+        Alumno alumno1 = new Alumno(1, "Victor", "DAM", 19);
+        Alumno alumno2 = new Alumno(2, "Luca", "DAM", 19);
+        Alumno alumno3 = new Alumno(3, "Cristobal", "ASIR", 20);
+
+        uax.registrarAlumno(alumno1);
+        uax.registrarAlumno(alumno2);
+        uax.registrarAlumno(alumno3);
+
+        System.out.println("Mostrar alumnos");
+        System.out.println(uax.mostrarAlumnos());
+
+        System.out.println("Numero de alumnos registrados:");
+        System.out.println(uax.contarAlumnos());
+
+        System.out.println();
+
+        System.out.println("Buscar alumno1:");
+        System.out.println(uax.buscarAlumno(1));
+
+        System.out.println();
+
+        System.out.println("Buscar alumno4:");
+        System.out.println(uax.buscarAlumno(4));
+
+    }
 }
