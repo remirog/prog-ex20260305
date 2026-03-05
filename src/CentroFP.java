@@ -71,12 +71,28 @@ public class CentroFP {
      */
     public void mostrarAlumnos(){
         StringBuilder sb = new StringBuilder("Alumnos: {");
+
         for (int i = 0; i < MAX_ALUMNOS; i++){
             if (alumnos[i] != null){
                 sb.append(alumnos[i].toString());
             }
         }
         sb.append("}");
+    }
+
+    /**
+     * Cuenta todos los alumnos que hay en el array de alumnos
+     * @return Devuelve el número de alumnos
+     */
+    public int contarAlumnos(){
+        int contador = 0;
+
+        for (int i = 0; i < MAX_ALUMNOS; i++){
+            if (alumnos[i] != null){
+                contador++;
+            }
+        }
+        return contador;
     }
 
 
