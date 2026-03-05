@@ -67,7 +67,8 @@ public class CentroFP {
     }
 
     /**
-     * Recorre el array de alumnos y muestra toda la información de los alumnos del array
+     * Recorre el array de alumnos y recoge toda la información de los alumnos del array
+     * @return Devuelve la información de todos los alumnos del array alumnos
      */
     public String mostrarAlumnos(){
         StringBuilder sb = new StringBuilder("Alumnos: {");
