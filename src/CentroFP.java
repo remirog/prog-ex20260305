@@ -22,7 +22,7 @@ public class CentroFP {
         Alumno alumno = null;
 
         for (int i = 0; i < MAX_ALUMNOS && !encontrado; i++){
-            if (alumnos[i].getId() == id){
+            if (alumnos[i] != null && alumnos[i].getId() == id){
                 alumno = alumnos[i];
                 encontrado = true;
             }
@@ -32,7 +32,7 @@ public class CentroFP {
 
     /**
      * Busca el primer hueco libre que encuentre en el arrray alumnos
-     * @return Devuelve la posicion de el hueco libre o sino hay hueco libre devuelve -1
+     * @return Devuelve la posicion de el hueco libre o si no hay hueco libre devuelve -1
      */
     private int buscarPrimerHuecoLibre(){
         boolean encontrado = false;
@@ -45,6 +45,25 @@ public class CentroFP {
             }
         }
         return posicion;
+    }
+
+    /**
+     * Añade al array alumno un nuevo Alumno si hay hueco disponible y no esta ua dentro
+     * @param alumno
+     * @return Devuelve un true si lo ha añadido correctamente y si no un false
+     */
+    public boolean registrarAlumno(Alumno alumno){
+        boolean encontrado = false;
+        int posicion;
+
+        if (buscarAlumno(alumno.getId()) == null){
+            posicion = buscarPrimerHuecoLibre();
+            if (posicion != -1){
+                alumnos[posicion] = alumno;
+                encontrado = true;
+            }
+        }
+        return encontrado;
     }
 
 
