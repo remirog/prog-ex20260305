@@ -30,6 +30,22 @@ public class CentroFP {
         return alumno;
     }
 
+    /**
+     * Busca el primer hueco libre que encuentre en el arrray alumnos
+     * @return Devuelve la posicion de el hueco libre o sino hay hueco libre devuelve -1
+     */
+    private int buscarPrimerHuecoLibre(){
+        boolean encontrado = false;
+        int posicion = -1;
+
+        for (int i = 0; i < MAX_ALUMNOS && !encontrado; i++){
+            if (alumnos[i] == null){
+                posicion = i;
+                encontrado = true;
+            }
+        }
+        return posicion;
+    }
 
 
 
